@@ -77,9 +77,10 @@
         tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
 
       });
+      
       sheet.getUnderlyingDataAsync(options).then(function (t) {
         table = t;
-        var tgt = document.getElementById("dataTargetFull");
+        var tgt = document.getElementById("dataTargetRaw");
         tgt.innerHTML = "<h4>Underlying Raw Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
       });
     }
@@ -148,7 +149,7 @@
       </table>
     </div>
     <h3>Raw Data</h3>
-    <div class="p-2 p-md-3 mb-2 text-white overflow-auto rounded bg-dark" style="max-height:600px;" id='dataTargetFull'>
+    <div class="p-2 p-md-3 mb-2 text-white overflow-auto rounded bg-dark" style="max-height:600px;" id='dataTargetRaw'>
     </div>
 
   </main>
