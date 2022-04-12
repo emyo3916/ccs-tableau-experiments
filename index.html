@@ -71,20 +71,20 @@
       sheet.getSummaryDataAsync(options).then(function (t) {
         table = t;
         var tgtS = document.getElementById("dataTargetSummary");
- //       var tgtR = document.getElementById("dataTargetRaw");
+        var tgtR = document.getElementById("dataTargetRaw");
         var graph_data = table.getData();
         tgtS.innerHTML = "";
         generateTable(tgtS, graph_data);
-//        tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
+        tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
 
       });
 
-      sheet.getUnderlyingTablesAsync().then(tables => {
-        //get first logical table 
-        return sheet.getUnderlyingTableDataAsync(tables[0].getTableId(), options).then(dataTable =>
-        var tgt = document.getElementById("dataTargetRaw");
-        tgt.innerHTML = "<h4>Underlying Raw Data:</h4><p>" + JSON.stringify(dataTable.getData()) + "</p>";
-      });
+ //     sheet.getUnderlyingTablesAsync().then(tables => {
+ //       //get first logical table 
+  //      return sheet.getUnderlyingTableDataAsync(tables[0].getTableId(), options).then(dataTable =>
+  //      var tgt = document.getElementById("dataTargetRaw");
+  //      tgt.innerHTML = "<h4>Underlying Raw Data:</h4><p>" + JSON.stringify(dataTable.getData()) + "</p>";
+  //    });
     }
 
     function generateTable(table, data) {
