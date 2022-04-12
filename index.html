@@ -69,19 +69,17 @@
 
       sheet.getSummaryDataAsync(options).then(function (t) {
         table = t;
-        var tgt = document.getElementById("dataTargetSummary");
+        var tgtS = document.getElementById("dataTargetSummary");
+        var tgtR = document.getElementById("dataTargetRaw");
         var graph_data = table.getData();
-        tgt.innerHTML = "";
-        generateTable(tgt, graph_data);
-        //tgt.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
+        tgtS.innerHTML = "";
+        generateTable(tgtS, graph_data);
+        tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
 
       });
       sheet.getUnderlyingDataAsync(options).then(function (t) {
         table = t;
         var tgt = document.getElementById("dataTargetFull");
-       // var graph_data = table.getData();
-      //  tgt.innerHTML = "";
-       // generateTable(tgt, graph_data);
         tgt.innerHTML = "<h4>Underlying Raw Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
       });
     }
@@ -121,7 +119,7 @@
       <div class="row flex-nowrap justify-content-between align-items-center">
 
         <div class="col-4">
-          <a class="blog-header-logo text-dark" href="#">Tableau Experiments -  New UIS Public</a>
+          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments</a>
         </div>
         
       </div>
@@ -140,7 +138,7 @@
             <input type="text" id="resizeHeight" placeholder="Height">
             <button type="button" onClick="vizResize();">Resize</button>
         </form>
-    </div>
+      </div>
     <button id="getData" onclick="getUnderlyingData()" class="btn btn-primary" disabled>Get
       Data</button>
     </div>
@@ -151,10 +149,6 @@
     </div>
     <h3>Raw Data</h3>
     <div class="p-2 p-md-3 mb-2 text-white overflow-auto rounded bg-dark" style="max-height:600px;" id='dataTargetFull'>
- <!--    <table class='table table-dark table-striped' id='dataTargetFull'>
-      </table>
- -->
-    </div>
     </div>
 
   </main>
