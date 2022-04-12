@@ -77,9 +77,10 @@
         tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
 
       });
-      
-      sheet.getUnderlyingDataAsync(options).then(function (t) {
-        table = t;
+
+      sheet.getUnderlyingTablesAsync(options).then(tables => {
+        //get first logical table 
+        return sheet.getUnderlyingTableDataAsync(tables[0].getTableId(), options).then(dataTable =>
         var tgt = document.getElementById("dataTargetRaw");
         tgt.innerHTML = "<h4>Underlying Raw Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
       });
@@ -120,7 +121,7 @@
       <div class="row flex-nowrap justify-content-between align-items-center">
 
         <div class="col-4">
-          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 5:20</a>
+          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 5:45</a>
         </div>
         
       </div>
