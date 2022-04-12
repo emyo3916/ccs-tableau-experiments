@@ -79,10 +79,10 @@
       sheet.getUnderlyingDataAsync(options).then(function (t) {
         table = t;
         var tgt = document.getElementById("dataTargetFull");
-        var graph_data = table.getData();
-        tgt.innerHTML = "";
-        generateTable(tgt, graph_data);
-        //tgt.innerHTML = "<h4>Underlying Full Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
+       // var graph_data = table.getData();
+      //  tgt.innerHTML = "";
+       // generateTable(tgt, graph_data);
+        tgt.innerHTML = "<h4>Underlying Raw Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
       });
     }
 
@@ -148,6 +148,12 @@
     <div class="p-2 p-md-3 mb-2 text-white overflow-auto rounded bg-dark" style="max-height:600px;">
       <table class='table table-dark table-striped' id='dataTargetSummary'>
       </table>
+    </div>
+    <h3>Raw Data</h3>
+    <div class="p-2 p-md-3 mb-2 text-white overflow-auto rounded bg-dark" style="max-height:600px;" id='dataTargetFull'>
+ <!--    <table class='table table-dark table-striped' id='dataTargetFull'>
+      </table>
+ -->
     </div>
     </div>
 
