@@ -58,16 +58,16 @@
         includeAllColumns: false
       };
 
-  /*    sheet.getSummaryDataAsync(options).then(function (t) {
+      sheet.getSummaryDataAsync(options).then(function (t) {
         table = t;
         var tgtS = document.getElementById("dataTargetSummary");
-  //      var tgtR = document.getElementById("dataTargetRaw");
+        var tgtR = document.getElementById("dataTarget");
         var graph_data = table.getData();
         tgtS.innerHTML = "";
         generateTable(tgtS, graph_data);
-   //     tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
+        tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
 
-      })*/
+      })
 
      sheet.getUnderlyingTablesAsync().then(tables => {
 	        // Get the first logical table and use that
@@ -113,7 +113,7 @@
       <div class="row flex-nowrap justify-content-between align-items-center">
 
         <div class="col-4">
-          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 7:07</a>
+          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 7:08</a>
         </div>
         
       </div>
