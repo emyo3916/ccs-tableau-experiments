@@ -50,9 +50,10 @@
     }
 
     function getUnderlyingData() {
-      sheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("CU Belonging SB");
+  //    sheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("CU Belonging SB");
       // If the active sheet is not a dashboard, then you can just enter:
       // viz.getWorkbook().getActiveSheet();
+      sheet = viz.getWorkbook().getActiveSheet();
       options = {
         maxRows: 0, // Max rows to return. Use 0 to return all rows
         ignoreAliases: false,
@@ -124,7 +125,7 @@
       <div class="row flex-nowrap justify-content-between align-items-center">
 
         <div class="col-4">
-          <h2>Tableau Accessiblity Experiments 11:33</h2>
+          <h2>Tableau Accessiblity Experiments 11:50</h2>
         </div>
         
       </div>
