@@ -10,14 +10,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
-    :root {
+  /*
       --button_blue: #0277bd;
       --cu_gold: #cfb87c;
       --cu_brick: #ae5A39;
       --light_gold: #f1ebd9;
-    }
+*/
     .btn-blue {
-      background-color: var(--button_blue);
+      background-color: #0277bd;
+      color: white;
+      font-weight: 600;
     }
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -148,7 +150,7 @@
     </div>
     <div class="py-2 mx-auto">
 
-    <button id="getData" type="submit" onclick="getUnderlyingData()" class="btn btn-blue" disabled>Get
+    <button id="getData" type="submit" onclick="getUnderlyingData()" class="btn btn-primary" disabled>Get
       Data</button>
     </div>
     <h3>Summary Data</h3>
