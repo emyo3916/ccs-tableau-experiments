@@ -65,7 +65,7 @@
         var graph_data = table.getData();
         tgtS.innerHTML = "";
         generateTable(tgtS, graph_data);
-        tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getName()) + "</p>" + JSON.stringify(table.getColumns()) + "</p>" + JSON.stringify(table.getData()) + "</p>";
+        tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getTotalRowCount()) + "</p>" + JSON.stringify(table.getColumns()) + "</p>" + JSON.stringify(table.getData()) + "</p>";
       })
     }
 
