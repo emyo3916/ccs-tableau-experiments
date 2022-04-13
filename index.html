@@ -62,15 +62,25 @@
         table = t;
         var tgtS = document.getElementById("dataTargetSummary");
         var tgtR = document.getElementById("dataTarget");
+        let columns = table.getColumns();
         var graph_data = table.getData();
         tgtS.innerHTML = "";
-        generateTable(tgtS, graph_data);
+        generateTable(tgtS, columns, graph_data);
         tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getTotalRowCount()) + "</p>" + JSON.stringify(table.getColumns()) + "</p>" + JSON.stringify(table.getData()) + "</p>";
       })
     }
 
 
-    function generateTable(table, data) {
+    function generateTable(table, header, data) {
+    let tHead = table.createTHead();
+    let tRow = tHead.insertRow(0);
+    header.forEach((el) => {
+     subEl = Object.values(el);
+        let tCell = tRow.insertCell();
+        let hText = document.createTextNode(subEl[0].$1);
+        tCell.appendChild(hText);
+    });
+
       let i = 0;
       for (let element of data) {
         let row = table.insertRow();
@@ -107,7 +117,7 @@
       <div class="row flex-nowrap justify-content-between align-items-center">
 
         <div class="col-4">
-          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 9:30</a>
+          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 11:50</a>
         </div>
         
       </div>
