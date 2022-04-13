@@ -72,15 +72,20 @@
 
 
     function generateTable(table, header, data) {
+      //create table header and add Row to first cell
     let tHead = table.createTHead();
     let tRow = tHead.insertRow(0);
+    let tCell = tRow.insertCell();
+    let hText = document.createTextNode('Row');
+        tCell.appendChild(hText);
+        //fill rest of header cells with columns data - weird array with objects containing key:pairs
     header.forEach((el) => {
      subEl = Object.values(el);
         let tCell = tRow.insertCell();
         let hText = document.createTextNode(subEl[0].$1);
         tCell.appendChild(hText);
     });
-
+    //fill in the rest of the table with the formatted values from summary data
       let i = 0;
       for (let element of data) {
         let row = table.insertRow();
