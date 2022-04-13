@@ -26,16 +26,18 @@
   </style>
   <!--
 <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-    -->
   <script type="text/javascript" src="https://viz-public.cu.edu/javascripts/api/tableau-2.min.js"></script>
+
+    -->
+  <script type="text/javascript" src="https://viz.cu.edu/javascripts/api/tableau-2.min.js"></script>
 
   <script type="text/javascript">
     var viz, sheet, table;
 
     function initViz() {
       var containerDiv = document.getElementById("vizContainer"),
-        url = "https://viz-public.cu.edu/t/Boulder/views/CUBoulderCultureSurvey2021/Belonging?",
-        options = {
+      url = "https://viz.cu.edu/t/Boulder/views/CCS_Sheets_Tabs/Belonging?",
+      options = {
           hideTabs: true,
           hideToolbar: true,
           onFirstInteractive: function () {
