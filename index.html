@@ -80,9 +80,11 @@
         numCell.appendChild(numText); 
         for (key in element) {
           for (let prop in element[key]) {
+            if (prop === 'formattedValue') {
             let cell = row.insertCell();
             let text = document.createTextNode(element[key][prop]);
             cell.appendChild(text);
+            }
           }
         }
       }
@@ -105,7 +107,7 @@
       <div class="row flex-nowrap justify-content-between align-items-center">
 
         <div class="col-4">
-          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 7:30</a>
+          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 9:30</a>
         </div>
         
       </div>
