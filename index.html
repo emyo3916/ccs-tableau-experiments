@@ -27,7 +27,7 @@
   <!--
 <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
     -->
-  <script type="text/javascript" src="https://viz.cu.edu/javascripts/api/tableau-2.min.js"></script>
+  <script type="text/javascript" src="https://viz.cu.edu/javascripts/api/tableau-2.5.0.min.js"></script>
 
   <script type="text/javascript">
     var viz, sheet, table;
@@ -68,7 +68,7 @@
         includeAllColumns: false
       };
 
-      sheet.getSummaryDataAsync(options).then(function (t) {
+/*       sheet.getSummaryDataAsync(options).then(function (t) {
         table = t;
         var tgtS = document.getElementById("dataTargetSummary");
   //      var tgtR = document.getElementById("dataTargetRaw");
@@ -77,11 +77,11 @@
         generateTable(tgtS, graph_data);
    //     tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
 
-      });
+      }); */
 
       sheet.getUnderlyingTablesAsync().then(tables => {
 	        // Get the first logical table and use that
-		return sheet.getUnderlyingTableDataAsync(tables[0].getTableId(), options).then(dataTable => {
+		    return sheet.getUnderlyingTableDataAsync(tables[0].getTableId(), options).then(dataTable => {
     	          var tgt = document.getElementById("dataTargetRaw");
                  tgt.innerHTML = "<h4>UnderlyingTableData:</h4><p>" + JSON.stringify(dataTable.getData()) + "</p>";
                });
