@@ -46,16 +46,6 @@
         };
       viz = new tableau.Viz(containerDiv, url, options);
     }
-    
-    function vizResize() {
-    var width = document.getElementById("resizeWidth").value;
-    var height = document.getElementById("resizeHeight").value;
-    var sheet = viz.getWorkbook().getActiveSheet();
-
-    sheet.changeSizeAsync(
-        {"behavior": "EXACTLY", "maxSize": { "height": height, "width": width }})
-        .then(viz.setFrameSize(parseInt(width, 10), parseInt(height, 10)));
-      }
 
     function getUnderlyingData() {
       sheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("CU Belonging SB");
@@ -82,7 +72,7 @@
      sheet.getUnderlyingTablesAsync().then(tables => {
 	        // Get the first logical table and use that
 		    return sheet.getUnderlyingTableDataAsync(tables[0].getTableId(), options).then(dataTable => {
-    	          var tgt = document.getElementById("dataTargetRaw");
+    	          var tgt = document.getElementById("dataTarget");
                  tgt.innerHTML = "<h4>UnderlyingTableData:</h4><p>" + JSON.stringify(dataTable.getData()) + "</p>";
                });
          });
@@ -123,7 +113,7 @@
       <div class="row flex-nowrap justify-content-between align-items-center">
 
         <div class="col-4">
-          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 6:45</a>
+          <a class="blog-header-logo text-dark" href="#">Tableau Accessiblity Experiments 7:07</a>
         </div>
         
       </div>
@@ -136,13 +126,7 @@
       <div id="vizContainer" style="width:600px; height:600px;"></div>
     </div>
     <div class="py-2 mx-auto">
-      <div id="controls" style="padding:20px;">
-        <form id="resizeForm">
-            <input type="text" id="resizeWidth" placeholder="Width">
-            <input type="text" id="resizeHeight" placeholder="Height">
-            <button type="button" onClick="vizResize();">Resize</button>
-        </form>
-      </div>
+
     <button id="getData" onclick="getUnderlyingData()" class="btn btn-primary" disabled>Get
       Data</button>
     </div>
