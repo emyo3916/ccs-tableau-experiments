@@ -27,7 +27,7 @@
   <!--
 <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
     -->
-  <script type="text/javascript" src="https://viz.cu.edu/javascripts/api/tableau-2.5.0.min.js"></script>
+  <script type="text/javascript" src="https://viz-public.cu.edu/javascripts/api/tableau_2.min.js"></script>
 
   <script type="text/javascript">
     var viz, sheet, table;
@@ -68,7 +68,7 @@
         includeAllColumns: false
       };
 
-      sheet.getSummaryDataAsync(options).then(function (t) {
+  /*    sheet.getSummaryDataAsync(options).then(function (t) {
         table = t;
         var tgtS = document.getElementById("dataTargetSummary");
   //      var tgtR = document.getElementById("dataTargetRaw");
@@ -77,7 +77,7 @@
         generateTable(tgtS, graph_data);
    //     tgtR.innerHTML = "<h4>Underlying Summary Data:</h4><p>" + JSON.stringify(table.getData()) + "</p>";
 
-      });
+      })*/
 
      sheet.getUnderlyingTablesAsync().then(tables => {
 	        // Get the first logical table and use that
@@ -152,7 +152,7 @@
       </table>
     </div>
     <h3>Raw Data</h3>
-    <div class="p-2 p-md-3 mb-2 text-white overflow-auto rounded bg-dark" style="max-height:600px;" id='dataTargetRaw'>
+    <div class="p-2 p-md-3 mb-2 text-white overflow-auto rounded bg-dark" style="max-height:600px;" id="dataTarget">
     </div>
 
   </main>
