@@ -28,18 +28,20 @@
   </style>
   <!--
 <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-  <script type="text/javascript" src="https://viz-public.cu.edu/javascripts/api/tableau-2.min.js"></script>
+      <script type="text/javascript" src="https://viz.cu.edu/javascripts/api/tableau-2.min.js"></script>
+
 
     -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://viz.cu.edu/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript" src="https://viz-public.cu.edu/javascripts/api/tableau-2.min.js"></script>
 
   <script type="text/javascript">
     var viz, sheet, table;
 
     function initViz() {
       var containerDiv = document.getElementById("vizContainer"),
-      url = "https://viz.cu.edu/t/ir/views/CCS_Sheets_Tabs/CUBelongingSB?",
+//      url = "https://viz.cu.edu/t/ir/views/CCS_Sheets_Tabs/CUBelongingSB?",
+        url = "https://viz-public.cu.edu/t/Boulder/views/AccessibilityExperiments/CUBelongingSB?"
       options = {
           hideTabs: false,
           hideToolbar: true,
@@ -138,7 +140,7 @@
           <h2>Tableau Accessiblity Experiments 8:12</h2>
         </div>
         <div class="col-6">
-          <span aria-hidden="true">This is a span with aria-hidden=true.</span><span class="visually-hidden">But this is a span with a visually-hidden class.</span>>
+          <span aria-hidden="true">This is a span with aria-hidden=true.</span><span class="visually-hidden">But this is a span with a visually-hidden class.</span>
         </div>
       </div>
     </header>
