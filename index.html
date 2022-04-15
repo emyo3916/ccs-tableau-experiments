@@ -112,8 +112,9 @@
     }
     $(document).ready(function() {
     $('input[type=radio][name="bsubtopic"]').on('change', function() {
+      var sheet = viz.getWorkbook().getActiveSheet();
         let subtopic = this.value;
-        console.log(subtopic);
+      sheet.applyFilterAsync("VarCategory Button", subtopic, tableau.FilterUpdateType.REPLACE);
     });
 });
   </script>
@@ -134,7 +135,7 @@
       <div class="row flex-nowrap justify-content-between align-items-center">
 
         <div class="col-4">
-          <h2>Tableau Accessiblity Experiments 10:10</h2>
+          <h2>Tableau Accessiblity Experiments 10:12</h2>
         </div>
         
       </div>
