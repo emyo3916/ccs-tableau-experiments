@@ -112,7 +112,7 @@
     }
     $(document).ready(function() {
     $('input[type=radio][name="bsubtopic"]').on('change', function() {
-        let subtopic = ('input[type=radio][name="bsubtopic"]:checked').val();
+        let subtopic = this.value;
         console.log(subtopic);
     });
 });
