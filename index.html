@@ -109,6 +109,11 @@
         tCell.appendChild(hText);
     });
     }
+    $(document).ready(function() {
+    $('input[type=radio][name="bsubtopic"]').on('change', function() {
+        alert(this.value);
+    });
+});
   </script>
 
   <!-- Custom styles for this template -->
@@ -140,32 +145,24 @@
         <legend>
         Explore subtopic charts: 
         </legend>
-        <ul>
-          <li>
         <div class="form-check">
         <label>
-          <input class="form-check-input" type="radio" name="bsubtopic" id="rb1" checked aria-checked>
+          <input class="form-check-input" type="radio" name="bsubtopic" id="rb1" checked>
           Belonging at CU Boulder
         </label>
       </div>
-    </li>
-    <li>
         <div class="form-check">
           <label>
             <input class="form-check-input" type="radio" name="bsubtopic" id="rb2">
           Department Belonging
         </label>
       </div>
-    </li>
-    <li>
         <div class="form-check">
           <label>
             <input class="form-check-input" type="radio" name="bsubtopic" id="rb3">
           Residence Hall Belonging
         </label>
       </div>
-    </li>
-    </ul>
       </fieldset>
     </div>
     <div class="p-1 p-md-1 mb-1 text-black overflow-auto rounded bg-light">
