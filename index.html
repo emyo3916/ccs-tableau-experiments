@@ -31,7 +31,8 @@
   <script type="text/javascript" src="https://viz-public.cu.edu/javascripts/api/tableau-2.min.js"></script>
 
     -->
-  <script type="text/javascript" src="https://viz.cu.edu/javascripts/api/tableau-2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://viz.cu.edu/javascripts/api/tableau-2.min.js"></script>
 
   <script type="text/javascript">
     var viz, sheet, table;
@@ -132,7 +133,7 @@
       <div class="row flex-nowrap justify-content-between align-items-center">
 
         <div class="col-4">
-          <h2>Tableau Accessiblity Experiments 6:20</h2>
+          <h2>Tableau Accessiblity Experiments 7:10</h2>
         </div>
         
       </div>
@@ -166,14 +167,14 @@
       </fieldset>
     </div>
     <div class="p-1 p-md-1 mb-1 text-black overflow-auto rounded bg-light">
-      <div id="vizContainer" style="width:1000px; height:600px;"></div>
+      <div id="vizContainer" style="width:1000px; height:600px;" aria-live="polite"></div>
     </div>
     <div class="py-2 mx-auto">
     <button id="getData" type="submit" onclick="getUnderlyingData()" class="btn btn-primary" disabled>Get
       Data</button>
     </div>
     <h3>Summary Data</h3>
-    <div class="p-2 p-md-3 mb-2 overflow-auto rounded" style="max-height:600px;">
+    <div class="p-2 p-md-3 mb-2 overflow-auto rounded" style="max-height:600px;" aria-live="polite">
       <table class='table table-striped .table-responsive' id='dataTargetSummary'>
       </table>
     </div>
